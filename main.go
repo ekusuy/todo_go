@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"go_todo/config"
+	"go_todo/app/models"
 )
 
 func main() {
-	fmt.Println(config.Config.Port)
+	fmt.Println(models.Db)
 }
