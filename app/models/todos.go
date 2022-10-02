@@ -35,8 +35,13 @@ func GetTodo(id int) (todo Todo, err error) {
 		&todo.UserID,
 		&todo.CreatedAt)
 
+	if err != nil {
+		log.Fatalln(err)
+	}
+
 	return todo, err
 }
+
 func GetTodos() (todos []Todo, err error) {
 	cmd := `select id, content, user_id, created_at from todos`
 	rows, err := Db.Query(cmd)
